@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Vizsga feladat teszt</title>
+</head>
+
+<body>
+    <table id="testTable" class="table table-sm table-striped table-dark table-hover">
+        <thead>
+            <tr>
+                <td>Teszt neve</td>
+                <td>Input adat</td>
+                <td>Elvárt eredmény</td>
+                <td>Végeredmény</td>
+                <td>Sikeresség</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        //Ide kell beilleszteni a JS kódokat a teszteléshez
+        function KockaFelszin(a) {
+            return 6 * a * a;
+        }
+
+        KockaFelszin(2);
+        ockaFelszin(3);
+        KockaFelszin(5);
+
+        function KockaTerfogat(a) {
+            return Math.pow(a, 3);
+        }
+
+        KockaTerfogat(2);
+        KockaTerfogat(3);
+        KockaTerfogat(5);
+
+        function PhErtek(vizsgaltErtek) {
+            if (vizsgaltErtek == 7) {
+                return ("semleges");
+            }
+            else if (vizsgaltErtek < 7) {
+                return ("savas");
+            }
+            else {
+                return ("lugos")
+            }
+        }
+
+        PhErtek(9);
+        PhErtek(5.5);
+        PhErtek(7);
+
+        function ElsoNSzamOsszege(szamokMennyisege) {
+            let szamok = 0;
+            for (let i = 1; i <= szamokMennyisege; i++) {
+                szamok = szamok + i;
+            }
+            return szamok;
+        }
+        ElsoNSzamOsszege(3);
+        ElsoNSzamOsszege(10);
+        ElsoNSzamOsszege(21);
+
+        function MaxParos(vizsgaltTomb) {
+            let maxErtek = vizsgaltTomb[0];
+            for (let i = 0; i < vizsgaltTomb.length; i++) {
+                if (vizsgaltTomb[i] % 2 == 0) {
+                    if (maxErtek < vizsgaltTomb[i]) {
+                        maxErtek = vizsgaltTomb[i];
+                    }
+                }
+            }
+            return maxErtek;
+        }
+
+        MaxParos([12, 3, 7, 19, 21]);
+        MaxParos([28, 14, 2, 42, 69]);
+        +MaxParos([32, 21, 54, 33, 21]);
+
+        function MaganHangzokSzama(vizsgaltSzoveg) {
+            let maganhangzok = ["a", "á", "e", "é", "i", "í", "o", "ó", "ö", "ő", "u", "ú", "ü", "ű"];
+            let darab = 0;
+            for (let i = 0; i < vizsgaltSzoveg.length; i++) {
+                for (let j = 0; j < maganhangzok.length; j++) {
+                    if (vizsgaltSzoveg[i] == maganhangzok[j]) {
+                        darab++;
+                    }
+                }
+            }
+            return darab;
+        }
+
+        MaganHangzokSzama("Szeretem a programozás");
+        MaganHangzokSzama("Géza kék az ég");
+        MaganHangzokSzama("Répa, retek, mogyoró");
+
+        function SzovegVisszafele(szoveg) {
+            let ertek = szoveg.length - 1;
+            let ujszoveg = "";
+            do {
+                ujszoveg = ujszoveg + szoveg[ertek];
+                ertek--;
+            } while (ertek >= 0)
+
+            return ujszoveg;
+        }
+
+        SzovegVisszafele("Szeretem a programozás");
+        SzovegVisszafele("Géza kék az ég");
+        SzovegVisszafele("Répa, retek, mogyoró");
+
+        function CegAtlagEletkor(vizsgaltObjektumTomb) {
+            let KorOsszeg = 0;
+            for (let i = 0; i < vizsgaltObjektumTomb.length; i++) {
+                KorOsszeg = KorOsszeg + vizsgaltObjektumTomb[i].kor;
+            }
+            return Math.round(KorOsszeg / vizsgaltObjektumTomb.length);
+        }
+
+        CegAtlagEletkor(Dolgozok);
+    </script>
+    <script src="tesztFile.js"></script>
+</body>
+
+</html>

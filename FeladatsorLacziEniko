@@ -1,0 +1,101 @@
+        //Ide kell beilleszteni a JS kódokat a teszteléshez
+        function KockaFelszin(a) {
+            return 6 * a * a;
+        }
+
+        KockaFelszin(2);
+        ockaFelszin(3);
+        KockaFelszin(5);
+
+        function KockaTerfogat(a) {
+            return Math.pow(a, 3);
+        }
+
+        KockaTerfogat(2);
+        KockaTerfogat(3);
+        KockaTerfogat(5);
+
+        function PhErtek(vizsgaltErtek) {
+            if (vizsgaltErtek == 7) {
+                return ("semleges");
+            }
+            else if (vizsgaltErtek < 7) {
+                return ("savas");
+            }
+            else {
+                return ("lugos")
+            }
+        }
+
+        PhErtek(9);
+        PhErtek(5.5);
+        PhErtek(7);
+
+        function ElsoNSzamOsszege(szamokMennyisege) {
+            let szamok = 0;
+            for (let i = 1; i <= szamokMennyisege; i++) {
+                szamok = szamok + i;
+            }
+            return szamok;
+        }
+        ElsoNSzamOsszege(3);
+        ElsoNSzamOsszege(10);
+        ElsoNSzamOsszege(21);
+
+        function MaxParos(vizsgaltTomb) {
+            let maxErtek = vizsgaltTomb[0];
+            for (let i = 0; i < vizsgaltTomb.length; i++) {
+                if (vizsgaltTomb[i] % 2 == 0) {
+                    if (maxErtek < vizsgaltTomb[i]) {
+                        maxErtek = vizsgaltTomb[i];
+                    }
+                }
+            }
+            return maxErtek;
+        }
+
+        MaxParos([12, 3, 7, 19, 21]);
+        MaxParos([28, 14, 2, 42, 69]);
+        +MaxParos([32, 21, 54, 33, 21]);
+
+        function MaganHangzokSzama(vizsgaltSzoveg) {
+            let maganhangzok = ["a", "á", "e", "é", "i", "í", "o", "ó", "ö", "ő", "u", "ú", "ü", "ű"];
+            let darab = 0;
+            for (let i = 0; i < vizsgaltSzoveg.length; i++) {
+                for (let j = 0; j < maganhangzok.length; j++) {
+                    if (vizsgaltSzoveg[i] == maganhangzok[j]) {
+                        darab++;
+                    }
+                }
+            }
+            return darab;
+        }
+
+        MaganHangzokSzama("Szeretem a programozás");
+        MaganHangzokSzama("Géza kék az ég");
+        MaganHangzokSzama("Répa, retek, mogyoró");
+
+        function SzovegVisszafele(szoveg) {
+            let ertek = szoveg.length - 1;
+            let ujszoveg = "";
+            do {
+                ujszoveg = ujszoveg + szoveg[ertek];
+                ertek--;
+            } while (ertek >= 0)
+
+            return ujszoveg;
+        }
+
+        SzovegVisszafele("Szeretem a programozás");
+        SzovegVisszafele("Géza kék az ég");
+        SzovegVisszafele("Répa, retek, mogyoró");
+
+        function CegAtlagEletkor(vizsgaltObjektumTomb) {
+            let KorOsszeg = 0;
+            for (let i = 0; i < vizsgaltObjektumTomb.length; i++) {
+                KorOsszeg = KorOsszeg + vizsgaltObjektumTomb[i].kor;
+            }
+            return Math.round(KorOsszeg / vizsgaltObjektumTomb.length);
+        }
+
+        CegAtlagEletkor(Dolgozok);
